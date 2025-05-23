@@ -1,0 +1,27 @@
+return {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+        require("lint").linters_by_ft = {
+            ["cpp"] = { "clangtidy" },
+            ["typescript"] = { "eslint_d", "codespell" },
+            ["html"] = { "codespell" },
+            ["scss"] = { "codespell", "stylelint" },
+            ["json"] = { "codespell" },
+            ["jsonc"] = { "codespell" },
+            ["svelte"] = { "eslint_d", "codespell" },
+            ["vue"] = { "eslint_d", "codespell" },
+            ["text"] = { "codespell" },
+            ["markdown"] = { "codespell" },
+        }
+
+        -- local stylelint = require("lint").linters.stylelint
+        -- stylelint.stream = "both"
+
+        vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter" }, {
+            callback = function()
+                require("lint").try_lint()
+            end,
+        })
+    end,
+}
