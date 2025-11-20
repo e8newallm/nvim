@@ -11,14 +11,12 @@ vim.keymap.set('n', '<up>',     '<C-w><C-k>', { desc = 'Move focus to the upper 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Mini.pick keymapping
-vim.keymap.set('n', '<leader>fb', ':Pick buffers<CR>')
-vim.keymap.set('n', '<leader>ff', ':Pick files<CR>')
-vim.keymap.set('n', '<leader>fg', ':Pick grep_live<CR>')
-
 require("which-key").add({
-	{"<leader>f", group = "find"},
-	{"<leader>fb", desc = "Find buffer"},
-	{"<leader>ff", desc = "Find file"},
-	{"<leader>fg", desc = "Find text"},
+	-- Mini.pick keymapping
+	{"<leader>f" , group = "find"},
+	{"<leader>fb", ':Pick buffers<CR>', 	desc = "Find buffer"},
+	{"<leader>ff", ':Pick files<CR>', 		desc = "Find file"},
+	{"<leader>fg", ':Pick grep_live<CR>', 	desc = "Find text"},
+
+	{"<leader>g" , '<cmd>LazyGit<cr>', 		desc = "LazyGit" }
 })

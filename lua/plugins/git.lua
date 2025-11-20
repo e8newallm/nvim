@@ -23,9 +23,6 @@ return { -- Adds git related signs to the nutter, as well as utilities for manag
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-		},
-		keys = {
-			{ "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" }
 		}
 	}
 }
