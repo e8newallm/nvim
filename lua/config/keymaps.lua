@@ -13,7 +13,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 require("which-key").add({
 	-- Mini.pick keymapping
-	{"<leader>f" , group = "find"},
+	{"<leader>f" , group = "Find..."},
 	{"<leader>fb", ':Pick buffers<CR>', 	desc = "Find buffer"},
 	{"<leader>ff", ':Pick files<CR>', 		desc = "Find file"},
 	{"<leader>fg", ':Pick grep_live<CR>', 	desc = "Find text"},
