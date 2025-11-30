@@ -41,6 +41,10 @@ return {
 			}
 
 			cmp.setup({
+				experimental = {
+					ghost_text = true
+				},
+
 				snippet = {
 					expand = function(args)
 						vim.snippet.expand(args.body)
